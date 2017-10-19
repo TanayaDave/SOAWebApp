@@ -205,5 +205,11 @@ public class Order {
     public void setCustId(int custId) {
         this.custId = custId;
     }
+    
+    @Override
+    public String toString() {
+        return "Order{" + "id=" + orderId + ", Customer Id=" + custId + ", Order Date=" + orderDate + ", Employee Id=" + employeeId + ", Unit Cose=" + unitCost + ", quantity=" + qnty + ",Location Id"+ locId +", Truck Id="+truckId+",Total Amt = "+totalAmount+'}';
+    }
+
 
 }

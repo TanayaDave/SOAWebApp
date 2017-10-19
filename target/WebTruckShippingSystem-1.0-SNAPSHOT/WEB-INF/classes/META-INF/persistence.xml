@@ -4,7 +4,10 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/itmd566DS</jta-data-source>
     <class>com.sjesu.webtruckshippingsystem.domain.Invoice</class>
+    <class>com.sjesu.webtruckshippingsystem.domain.Drivers</class>
+    <class>com.sjesu.webtruckshippingsystem.domain.Truck</class>
     <class>com.sjesu.webtruckshippingsystem.domain.Customer</class>
+    <class>com.sjesu.webtruckshippingsystem.domain.Expense</class>
     <class>com.sjesu.webtruckshippingsystem.domain.Order</class>
     <class>com.sjesu.webtruckshippingsystem.domain.Vehicles</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>

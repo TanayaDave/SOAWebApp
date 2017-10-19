@@ -98,5 +98,11 @@ public class Customer {
     public void setContactdetails(ContactDetails contactdetails) {
         this.contactdetails = contactdetails;
     }
+    
+    @Override
+    public String toString() {
+        return "Customers{" + "id=" + custId + ", First Name=" + custFirstName + ", Last Name=" + custLastName + ", address=" + address + ", contact details=" + contactdetails + '}';
+    }
+
 
 }
