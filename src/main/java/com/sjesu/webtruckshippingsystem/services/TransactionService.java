@@ -5,7 +5,7 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-import com.sjesu.webtruckshippingsystem.domain.Vehicles;
+import com.sjesu.webtruckshippingsystem.domain.Transaction;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -16,25 +16,24 @@ import javax.persistence.EntityTransaction;
  *
  * @author shrikantjesu
  */
-@WebService(serviceName = "VehiclesServices")
-public class VehiclesServices {
+@WebService(serviceName = "TransactionService")
+public class TransactionService {
 
-    @WebMethod(operationName = "getVehicleDetailsById")
-    public Vehicles vehiclesServices(@WebParam(name = "vehicleId") Integer vehicleId) throws Exception {
+    @WebMethod(operationName = "getTransactionDetailsById")
+    public Transaction transactionService(@WebParam(name = "tranId") Integer tranId) throws Exception {
 
-        Vehicles vehicle = new Vehicles();
-
+        Transaction transaction = new Transaction();
         try {
             EntityManager em = Utility.createEntityManager();
             EntityTransaction trans = em.getTransaction();
             trans.begin();
-            vehicle = em.find(Vehicles.class, vehicleId);
+            transaction = em.find(Transaction.class, tranId);
             trans.commit();
             em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return vehicle;
+        return transaction;
 
     }
 }

@@ -6,8 +6,7 @@
 package com.sjesu.webtruckshippingsystem.services;
 
 import com.sjesu.webtruckshippingsystem.domain.Comments;
-import com.sjesu.webtruckshippingsystem.domain.Invoice;
-import com.sjesu.webtruckshippingsystem.domain.Pricing;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -23,33 +22,38 @@ import javax.persistence.EntityTransaction;
      *
      * @author shrikantjesu
  */
-@WebService(serviceName = "comments")
+@WebService(serviceName = "CommentsService")
 public class CommentsService {
 
     @WebMethod(operationName = "getCommentsById")
-    public String CommentsService(@WebParam(name = "id") Integer cmtid) throws Exception {
+    public Comments CommentsService(@WebParam(name = "id") Integer cmtid) throws Exception {
 
         Comments comment = new Comments();
         try {
-//            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
-            EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
+            EntityManager em = Utility.createEntityManager();
             EntityTransaction trans = em.getTransaction();
             trans.begin();
-            comment = em.find(Comments.class, 1);
+            comment = em.find(Comments.class, cmtid);
             trans.commit();
+            em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return comment.toString();
+        return comment;
 
     }
 
-    @WebMethod
+    @WebMethod(operationName = "getCommentsList")
     public List<Comments> getComments() {
-        EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
-        EntityTransaction trans = em.getTransaction();
-
-        return (em.createQuery("Select c from Comments c", Comments.class).getResultList());
+        EntityManager em = Utility.createEntityManager();
+        List<Comments> commentList = new ArrayList<>();
+        try {
+            commentList = em.createQuery("Select c from Comments c", Comments.class).getResultList();
+            em.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return commentList;
 
     }
 

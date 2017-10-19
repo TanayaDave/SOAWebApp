@@ -5,9 +5,8 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-import com.sjesu.webtruckshippingsystem.domain.Comments;
 import com.sjesu.webtruckshippingsystem.domain.Employee;
-import com.sjesu.webtruckshippingsystem.domain.Invoice;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -23,33 +22,38 @@ import javax.persistence.EntityTransaction;
      *
      * @author shrikantjesu
  */
-@WebService(serviceName = "employee")
+@WebService(serviceName = "EmployeeService")
 public class EmployeeService {
 
     @WebMethod(operationName = "getEmployeeById")
-    public String CommentsService(@WebParam(name = "id") Integer empid) throws Exception {
+    public Employee employeeService(@WebParam(name = "id") Integer empid) throws Exception {
 
         Employee emp = new Employee();
         try {
-//            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
-            EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
+            EntityManager em = Utility.createEntityManager();
             EntityTransaction trans = em.getTransaction();
             trans.begin();
-            emp = em.find(Employee.class, 1);
+            emp = em.find(Employee.class, empid);
             trans.commit();
+            em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return emp.toString();
+        return emp;
 
     }
 
-    @WebMethod
+    @WebMethod(operationName = "getEmployeeList")
     public List<Employee> getEmployees() {
-        EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
-        EntityTransaction trans = em.getTransaction();
-
-        return (em.createQuery("Select c from Employee c", Employee.class).getResultList());
+        EntityManager em = Utility.createEntityManager();
+        List<Employee> empList = new ArrayList<>();
+        try {
+            empList = em.createQuery("Select c from Employee c", Employee.class).getResultList();
+            em.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return empList;
 
     }
 }

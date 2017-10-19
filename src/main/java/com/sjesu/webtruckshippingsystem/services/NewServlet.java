@@ -6,14 +6,11 @@
 package com.sjesu.webtruckshippingsystem.services;
 
 //import com.sjesu.webtruckshippingsystem.domain.Customer;
-import com.sjesu.webtruckshippingsystem.domain.Invoice;
-import com.sjesu.webtruckshippingsystem.domain.Vehicles;
+import com.sjesu.webtruckshippingsystem.domain.Ticket;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +46,7 @@ public class NewServlet extends HttpServlet {
             EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
             EntityTransaction trans=em.getTransaction();
             trans.begin();
-            Vehicles vehicle=em.find(Vehicles.class, 1);
+            Ticket vehicle=em.find(Ticket.class, 1);
             trans.commit();
             em.close();
             out.println("<h1>Servlet NewServlet at " + vehicle.toString() + "</h1>");

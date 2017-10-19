@@ -5,15 +5,15 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-
 import com.sjesu.webtruckshippingsystem.domain.Invoice;
+import com.sjesu.webtruckshippingsystem.domain.Order;
+import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 /**
  *
@@ -23,21 +23,34 @@ import javax.persistence.Persistence;
 public class InvoiceService {
 
     @WebMethod(operationName = "getInvoiceDetailsById")
-    public String InvoiceService(@WebParam(name = "invoiceId") Integer empId) throws Exception {
- 
-        Invoice invoice=new Invoice();
+    public Invoice invoiceService(@WebParam(name = "invoiceId") Integer empId) throws Exception {
+
+        Invoice invoice = new Invoice();
         try {
-//            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
-            EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
-            EntityTransaction trans=em.getTransaction();
+            EntityManager em = Utility.createEntityManager();
+            EntityTransaction trans = em.getTransaction();
             trans.begin();
-            invoice=em.find(Invoice.class, 1);
+            invoice = em.find(Invoice.class, empId);
             trans.commit();
             em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return invoice.toString();
+        return invoice;
+
+    }
+
+    @WebMethod(operationName = "getInvoiceList")
+    public List<Invoice> getInvoiceList() {
+        EntityManager em = Utility.createEntityManager();
+        List<Invoice> invoiceList = new ArrayList<>();
+        try {
+            invoiceList = em.createQuery("Select i from Invoice i", Invoice.class).getResultList();
+            em.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return invoiceList;
 
     }
 }

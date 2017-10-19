@@ -32,13 +32,13 @@ public class Truck {
     private String licPlateNo;
     private String make;
     private String year;
-    @OneToMany(mappedBy = "truck")
-    private List<Drivers> drivers = new ArrayList<>();
+//    @OneToMany(mappedBy = "truck")
+//    private List<Drivers> drivers = new ArrayList<>();
    
-    public void addDrivers(Drivers a) {
-        this.drivers.add(a);
-        a.setTruck(this);
-    }
+//    public void addDrivers(Drivers a) {
+//        this.drivers.add(a);
+////        a.setTruck(this);
+//    }
 
     public Truck() {
     }
@@ -118,17 +118,17 @@ public class Truck {
         this.year = year;
     }
 
-    public List<Drivers> getDrivers() {
-        return drivers;
-    }
-
-    public void setDrivers(List<Drivers> drivers) {
-        this.drivers = drivers;
-    }
+//    public List<Drivers> getDrivers() {
+//        return drivers;
+//    }
+//
+//    public void setDrivers(List<Drivers> drivers) {
+//        this.drivers = drivers;
+//    }
 
     @Override
     public String toString() {
-        return "Truck{" + "id=" + id + ", vin=" + vin + ", color=" + color + ", capacity=" + capacity + ", type=" + type + ", licPlateNo=" + licPlateNo + ", make=" + make + ", year=" + year + ", drivers=" + drivers + '}';
+        return "Truck{" + "id=" + id + ", vin=" + vin + ", color=" + color + ", capacity=" + capacity + ", type=" + type + ", licPlateNo=" + licPlateNo + ", make=" + make + ", year=" + year + '}';
     }
 
 }

@@ -5,21 +5,14 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-import com.sjesu.webtruckshippingsystem.domain.Employee;
 import com.sjesu.webtruckshippingsystem.domain.Order;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -29,30 +22,34 @@ import javax.servlet.http.HttpServletResponse;
 public class OrderService {
 
     @WebMethod(operationName = "getOrderDetailsById")
-    public String OrderService(@WebParam(name = "orderId") Integer id) throws Exception {
- 
+    public Order orderService(@WebParam(name = "orderId") Integer id) throws Exception {
 
-        Order order=new Order();
+        Order order = new Order();
         try {
-//            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
-            EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
-            EntityTransaction trans=em.getTransaction();
+            EntityManager em = Utility.createEntityManager();
+            EntityTransaction trans = em.getTransaction();
             trans.begin();
-            order=em.find(Order.class, id);
+            order = em.find(Order.class, id);
             trans.commit();
             em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return order.toString();
+        return order;
 
     }
-     @WebMethod
-    public List<Order> getOrderList() {
-        EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
-        EntityTransaction trans = em.getTransaction();
 
-        return (em.createQuery("Select c from OrderTable c", Order.class).getResultList());
+    @WebMethod(operationName = "getOrderList")
+    public List<Order> getOrderList() {
+        EntityManager em = Utility.createEntityManager();
+        List<Order> orderList = new ArrayList<>();
+        try {
+            orderList = em.createQuery("Select c from OrderTable c", Order.class).getResultList();
+            em.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orderList;
 
     }
 }

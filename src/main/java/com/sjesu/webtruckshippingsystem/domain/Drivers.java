@@ -29,17 +29,16 @@ public class Drivers {
     private String license;
     private String licenseState;
     private String driverType;
-
-
-    @ManyToOne
-    @JoinColumn(name = "truck_id")
-    private Truck truck;
+    
+//    @ManyToOne
+//    @JoinColumn(name = "truck_id")
+//    private Truck truck;
 
     public Drivers(Long id, String name, String license, Truck truck) {
         this.id = id;
         this.name = name;
         this.license = license;
-        this.truck = truck;
+//        this.truck = truck;
     }
 
     public Drivers(String name, String license) {
@@ -90,17 +89,17 @@ public class Drivers {
         this.driverType = driverType;
     }
 
-    public Truck getTruck() {
-        return truck;
-    }
-
-    public void setTruck(Truck truck) {
-        this.truck = truck;
-    }
+//    public Truck getTruck() {
+//        return truck;
+//    }
+//
+//    public void setTruck(Truck truck) {
+//        this.truck = truck;
+//    }
 
     @Override
     public String toString() {
-        return "Drivers{" + "id=" + id + ", name=" + name + ", license=" + license + ", licenseState=" + licenseState + ", driverType=" + driverType + ", truck=" + truck + '}';
+        return "Drivers{" + "id=" + id + ", name=" + name + ", license=" + license + ", licenseState=" + licenseState + ", driverType=" + driverType + '}';
     }
 
 }
