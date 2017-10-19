@@ -5,7 +5,9 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
+//import com.sjesu.webtruckshippingsystem.domain.Customer;
 import com.sjesu.webtruckshippingsystem.domain.Invoice;
+import com.sjesu.webtruckshippingsystem.domain.Vehicles;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.EntityManager;
@@ -44,13 +46,13 @@ public class NewServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 //            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
-            EntityManager em=emf.createEntityManager();
+            EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
             EntityTransaction trans=em.getTransaction();
             trans.begin();
-            Invoice invoice=em.find(Invoice.class, 1);
+            Vehicles vehicle=em.find(Vehicles.class, 1);
             trans.commit();
-            out.println("<h1>Servlet NewServlet at " + invoice.toString() + "</h1>");
+            em.close();
+            out.println("<h1>Servlet NewServlet at " + vehicle.toString() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

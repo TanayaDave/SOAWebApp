@@ -1,0 +1,16 @@
+com/sjesu/webtruckshippingsystem/domain/Invoice_.class
+com/sjesu/webtruckshippingsystem/services/Utility.class
+com/sjesu/webtruckshippingsystem/domain/Address_.class
+com/sjesu/webtruckshippingsystem/services/NewServlet.class
+com/sjesu/webtruckshippingsystem/domain/ContactDetails_.class
+com/sjesu/webtruckshippingsystem/domain/Customer_.class
+com/sjesu/webtruckshippingsystem/domain/ContactDetails.class
+com/sjesu/webtruckshippingsystem/domain/Order.class
+com/sjesu/webtruckshippingsystem/domain/Order_.class
+com/sjesu/webtruckshippingsystem/domain/Vehicles_.class
+com/sjesu/webtruckshippingsystem/domain/Address.class
+com/sjesu/webtruckshippingsystem/domain/Invoice.class
+com/sjesu/webtruckshippingsystem/domain/Vehicles.class
+com/sjesu/webtruckshippingsystem/services/InvoiceService.class
+com/sjesu/webtruckshippingsystem/domain/Customer.class
+com/sjesu/webtruckshippingsystem/services/VehiclesServices.class
