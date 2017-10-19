@@ -5,9 +5,11 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
+import com.sjesu.webtruckshippingsystem.domain.Employee;
 import com.sjesu.webtruckshippingsystem.domain.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -43,6 +45,14 @@ public class OrderService {
             e.printStackTrace();
         }
         return order.toString();
+
+    }
+     @WebMethod
+    public List<Order> getOrderList() {
+        EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+
+        return (em.createQuery("Select c from OrderTable c", Order.class).getResultList());
 
     }
 }

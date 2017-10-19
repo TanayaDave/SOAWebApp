@@ -5,6 +5,7 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
+import com.sjesu.webtruckshippingsystem.domain.Employee;
 import com.sjesu.webtruckshippingsystem.domain.Pricing;
 import java.util.List;
 import javax.jws.WebMethod;
@@ -24,23 +25,30 @@ import javax.persistence.EntityTransaction;
 @WebService(serviceName = "price")
 public class PricingService {
 
-    @WebMethod(operationName = "getPricingList")
-    public List<Pricing> priceService(@WebParam(name = "priceid") Integer prcid) throws Exception {
+    @WebMethod(operationName = "getPriceById")
+    public String priceService(@WebParam(name = "priceid") Integer prcid) throws Exception {
 
-        PricingService price = new PricingService();
+        Pricing price = new Pricing();
         try {
 //            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
             EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
             EntityTransaction trans = em.getTransaction();
-
+            trans.begin();
+            price = em.find(Pricing.class, 1);
+            trans.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return price.findAllPrice();
+        return price.toString();
+
     }
 
-    public List<Pricing> findAllPrice() {
-        EntityManager em = Utility.createEntityManager();
+    @WebMethod
+    public List<Pricing> getPricing() {
+        EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+
         return (em.createQuery("Select c from Pricing c", Pricing.class).getResultList());
+
     }
 }
