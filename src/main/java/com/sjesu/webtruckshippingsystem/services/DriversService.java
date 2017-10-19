@@ -32,7 +32,6 @@ public class DriversService {
 
         Drivers driver=new Drivers();
         try {
-//            EntityManagerFactory emf=Persistence.createEntityManagerFactory("ITMD566PU");
             EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
             EntityTransaction trans=em.getTransaction();
             trans.begin();
