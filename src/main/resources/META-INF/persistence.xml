@@ -18,6 +18,7 @@
     <class>com.sjesu.webtruckshippingsystem.domain.Maintenance</class>
     <class>com.sjesu.webtruckshippingsystem.domain.Payment</class>
     <class>com.sjesu.webtruckshippingsystem.domain.Pricing</class>
+    <class>com.sjesu.webtruckshippingsystem.domain.User</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <!--      <property name="eclipselink.logging.level" value="FINE"/>-->

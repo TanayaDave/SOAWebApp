@@ -32,10 +32,8 @@ public class loginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     private static final long serialVersionUID = 1L;
-    
-   
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -48,7 +46,7 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
     }
 
     /**
@@ -66,29 +64,23 @@ public class loginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String pass = request.getParameter("pass");
-        
+        String userType = null;
+        boolean loginSuccess = false;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sys", "root", "");
-            PreparedStatement pst = conn.prepareStatement("Select username,pass from login where username=? and pass=?");
-            pst.setString(1, username);
-            pst.setString(2, pass);
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-                if(username.equals("admin"))
+            loginSuccess = LoginService.userLogin(username, pass);
+            if (loginSuccess) {
+                if (username.equals("admin")) {
                     response.sendRedirect("welcome.jsp");
-                //out.println("Correct login credentials");
-                else
+                } //out.println("Correct login credentials");
+                else {
                     response.sendRedirect("customer.jsp");
-            } 
-            else {
-                out.println("Incorrect login credentials");
+                }
             }
-        } 
-        catch (ClassNotFoundException | SQLException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
     }
 
     /**

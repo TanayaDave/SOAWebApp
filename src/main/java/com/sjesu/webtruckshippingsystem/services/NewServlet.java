@@ -39,14 +39,14 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet NewServlet</title>");
             out.println("</head>");
             out.println("<body>");
 //            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            EntityManager em=Utility.createEntityManager(); //emf.createEntityManager();
-            EntityTransaction trans=em.getTransaction();
+            EntityManager em = Utility.createEntityManager(); //emf.createEntityManager();
+            EntityTransaction trans = em.getTransaction();
             trans.begin();
-            Ticket vehicle=em.find(Ticket.class, 1);
+            Ticket vehicle = em.find(Ticket.class, 1);
             trans.commit();
             em.close();
             out.println("<h1>Servlet NewServlet at " + vehicle.toString() + "</h1>");
@@ -81,6 +81,7 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Utility.updateEmployee();
         processRequest(request, response);
     }
 
