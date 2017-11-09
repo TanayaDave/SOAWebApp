@@ -28,7 +28,7 @@
       <li><a href="#">Customers</a></li>
       <li><a href="#">Generate Invoices</a></li>
       <li><a href="#">Maintenance</a></li>
-      <li><a href="#">Employees</a></li>
+      <li><a href="employees.jsp">Employees</a></li>
       <li><a href="#">View Comments</a></li>
     </ul>
   </div>
