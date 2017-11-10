@@ -4,17 +4,9 @@
         <welcome-file>loginPage.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>NewServlet</servlet-name>
-        <servlet-class>com.sjesu.webtruckshippingsystem.services.NewServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>loginServlet</servlet-name>
-        <servlet-class>com.sjesu.webtruckshippingsystem.services.loginServlet</servlet-class>
+        <servlet-class>com.sjesu.webtruckshippingsystem.servlet.loginServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>NewServlet</servlet-name>
-        <url-pattern>/NewServlet</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>

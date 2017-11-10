@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sjesu.webtruckshippingsystem.services;
+package com.sjesu.webtruckshippingsystem.servlet;
 
+import com.sjesu.webtruckshippingsystem.services.LoginService;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -66,20 +62,20 @@ public class loginServlet extends HttpServlet {
         String pass = request.getParameter("pass");
         String userType = null;
         boolean loginSuccess = false;
-        try {
+//        try {
             loginSuccess = LoginService.userLogin(username, pass);
             if (loginSuccess) {
                 if (username.equals("admin")) {
                     response.sendRedirect("welcome.jsp");
                 } //out.println("Correct login credentials");
                 else {
-                    response.sendRedirect("customer.jsp");
+                    response.sendRedirect("views/customer/customer.jsp");
                 }
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }
 

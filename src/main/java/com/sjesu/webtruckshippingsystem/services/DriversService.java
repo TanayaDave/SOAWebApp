@@ -4,36 +4,10 @@
  * and open the template in the editor.
  */
 package com.sjesu.webtruckshippingsystem.services;
-
-import com.sjesu.webtruckshippingsystem.domain.Drivers;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebService;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-
 /**
  *
  * @author user
  */
-@WebService(serviceName = "DriversService")
 public class DriversService {
 
-    @WebMethod(operationName = "getDriverDetailsById")
-    public Drivers driversService(@WebParam(name = "id") Long id) throws Exception {
-
-        Drivers driver = new Drivers();
-        try {
-            EntityManager em = Utility.createEntityManager();
-            EntityTransaction trans = em.getTransaction();
-            trans.begin();
-            driver = em.find(Drivers.class, id);
-            trans.commit();
-            em.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return driver;
-
-    }
 }

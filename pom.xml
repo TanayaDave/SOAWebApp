@@ -129,6 +129,24 @@
                         <id>wsimport-generate-EmployeeService</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>dhcp141.merusouth118.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>com.wsdl</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://dhcp141.merusouth118.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/EmployeeService_1.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-EmployeeService_1</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
