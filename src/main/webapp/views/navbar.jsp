@@ -22,7 +22,7 @@
             <li><a href="#">Customers</a></li>
             <li><a href="#">Generate Invoices</a></li>
             <li><a href="#">Maintenance</a></li>
-            <li><a href="views/employee/employees.jsp" onclick='abc(event);'>Employees</a></li>
+            <li><a href="EmployeeServlet">Employees</a></li>
             <li><a href="#">View Comments</a></li>
         </ul>
     </div>

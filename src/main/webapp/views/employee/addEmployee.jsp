@@ -18,11 +18,18 @@
     </head>
     <body>
 
+        <!-- <div class="main">
+                <button type="button" id="Back"  class="btn btn-primary">Back</button>               
+        </div>
+        -->
+        <input type=hidden name=opr id=opr value=2>
+
+
         <div class="container">
             <button  class="well" type="button" id="Back">Back</button>
             <div class="col-lg-12 well">
                 <div class="row">
-                    <form action="loginServlet" method="post">
+                    <form action="${pageContext.request.contextPath}/EmployeeServlet" method="post">
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-6 form-group">
@@ -37,11 +44,11 @@
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Date of Birth</label>
-                                    <input type="text" id="DOB" name="DOB" placeholder="Enter Date of Birth Here.." class="form-control">
+                                    <input type="text" id="DOB" name="DOB" placeholder="DD-MM-YYYY" class="form-control">
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Date of Hire</label>
-                                    <input type="text" id="DOH" name="DOH" placeholder="Enter Date of Hire Here.." class="form-control">
+                                    <input type="text" id="DOH" name="DOH" placeholder="DD-MM-YYYY" class="form-control">
                                 </div>
                             </div>	
                             <div class="row">
@@ -104,5 +111,8 @@
                 </div>
             </div>
         </div>
+
+
+
     </body>
 </html>

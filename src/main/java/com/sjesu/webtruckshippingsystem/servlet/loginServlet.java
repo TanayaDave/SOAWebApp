@@ -64,34 +64,34 @@ public class loginServlet extends HttpServlet {
         String pass = request.getParameter("pass");
         String userType = null;
         boolean loginSuccess = false;
-        String fName = request.getParameter("fName");
-        String lName = request.getParameter("lName");
-        String addrline1 = request.getParameter("addrline1");
-        String addrline2 = request.getParameter("addrline2");
-        String city = request.getParameter("city");
-        String state = request.getParameter("state");
-        String zip = request.getParameter("zip");
-        String phoneNo = request.getParameter("phoneNo");
-        String email = request.getParameter("email");
 
-        Customer customer = new Customer();
-        customer.setCustFirstName(fName);
-        customer.setCustLastName(lName);
-        Address address = new Address();
-        address.setAddressLine1(addrline1);
-        address.setAddressLine2(addrline2);
-        address.setCity(city);
-        address.setZip(Integer.parseInt(zip));
-        address.setState(state);
-        ContactDetails contactDetails=new ContactDetails();
-        contactDetails.setPhoneNumber(phoneNo);
-        contactDetails.setEmail(email);
-        customer.setAddress(address);
-        customer.setContactdetails(contactDetails);
-        
         String signup = request.getParameter("signup");
         try {
-            if (signup.equals("signup")) {
+            if (signup != null && signup.equals("signup")) {
+                String fName = request.getParameter("fName");
+                String lName = request.getParameter("lName");
+                String addrline1 = request.getParameter("addrline1");
+                String addrline2 = request.getParameter("addrline2");
+                String city = request.getParameter("city");
+                String state = request.getParameter("state");
+                String zip = request.getParameter("zip");
+                String phoneNo = request.getParameter("phoneNo");
+                String email = request.getParameter("email");
+
+                Customer customer = new Customer();
+                customer.setCustFirstName(fName);
+                customer.setCustLastName(lName);
+                Address address = new Address();
+                address.setAddressLine1(addrline1);
+                address.setAddressLine2(addrline2);
+                address.setCity(city);
+                address.setZip(Integer.parseInt(zip));
+                address.setState(state);
+                ContactDetails contactDetails = new ContactDetails();
+                contactDetails.setPhoneNumber(phoneNo);
+                contactDetails.setEmail(email);
+                customer.setAddress(address);
+                customer.setContactdetails(contactDetails);
 //                response.sendRedirect("loginPage.jsp");
                 request.getRequestDispatcher("/loginPage.jsp").forward(request, response);
             } else {
