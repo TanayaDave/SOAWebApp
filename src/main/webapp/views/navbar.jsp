@@ -20,6 +20,7 @@
             <li><a href="#">Trucks</a></li>      
             <li><a href="#">Orders</a></li>
             <li><a href="#">Customers</a></li>
+            <li><a href="/views/pricing/addPricing.jsp">Pricing</a></li>
             <li><a href="#">Generate Invoices</a></li>
             <li><a href="#">Maintenance</a></li>
             <li><a href="EmployeeServlet">Employees</a></li>
