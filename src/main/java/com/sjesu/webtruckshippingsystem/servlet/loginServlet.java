@@ -5,6 +5,9 @@
  */
 package com.sjesu.webtruckshippingsystem.servlet;
 
+import com.sjesu.webtruckshippingsystem.domain.Address;
+import com.sjesu.webtruckshippingsystem.domain.ContactDetails;
+import com.sjesu.webtruckshippingsystem.domain.Customer;
 import com.sjesu.webtruckshippingsystem.services.LoginService;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -57,25 +60,55 @@ public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String pass = request.getParameter("pass");
         String userType = null;
         boolean loginSuccess = false;
-//        try {
-            loginSuccess = LoginService.userLogin(username, pass);
-            if (loginSuccess) {
-                if (username.equals("admin")) {
-                    response.sendRedirect("welcome.jsp");
-                } //out.println("Correct login credentials");
-                else {
-                    response.sendRedirect("views/customer/customer.jsp");
+        String fName = request.getParameter("fName");
+        String lName = request.getParameter("lName");
+        String addrline1 = request.getParameter("addrline1");
+        String addrline2 = request.getParameter("addrline2");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zip = request.getParameter("zip");
+        String phoneNo = request.getParameter("phoneNo");
+        String email = request.getParameter("email");
+
+        Customer customer = new Customer();
+        customer.setCustFirstName(fName);
+        customer.setCustLastName(lName);
+        Address address = new Address();
+        address.setAddressLine1(addrline1);
+        address.setAddressLine2(addrline2);
+        address.setCity(city);
+        address.setZip(Integer.parseInt(zip));
+        address.setState(state);
+        ContactDetails contactDetails=new ContactDetails();
+        contactDetails.setPhoneNumber(phoneNo);
+        contactDetails.setEmail(email);
+        customer.setAddress(address);
+        customer.setContactdetails(contactDetails);
+        
+        String signup = request.getParameter("signup");
+        try {
+            if (signup.equals("signup")) {
+//                response.sendRedirect("loginPage.jsp");
+                request.getRequestDispatcher("/loginPage.jsp").forward(request, response);
+            } else {
+                loginSuccess = LoginService.userLogin(username, pass);
+                if (loginSuccess) {
+                    if (username.equals("admin")) {
+                        response.sendRedirect("welcome.jsp");
+                    } //out.println("Correct login credentials");
+                    else {
+                        response.sendRedirect("views/customer/customer.jsp");
+                    }
                 }
             }
 
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

@@ -7,9 +7,17 @@
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.sjesu.webtruckshippingsystem.servlet.loginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <servlet-class>com.sjesu.webtruckshippingsystem.servlet.EmployeeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmployeeServlet</servlet-name>
+        <url-pattern>/EmployeeServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

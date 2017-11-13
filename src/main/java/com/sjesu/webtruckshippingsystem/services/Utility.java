@@ -5,7 +5,6 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-import com.sjesu.webtruckshippingsystem.domain.User;
 import com.wsdl.Address;
 import com.wsdl.ContactDetails;
 import com.wsdl.Employee;

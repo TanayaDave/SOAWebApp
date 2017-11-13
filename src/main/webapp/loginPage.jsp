@@ -69,6 +69,9 @@ backgrnd {
                     <div class="form-group col-xs-4">
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </div>
+                    <div class="form-group col-xs-4">
+                        <a href="signup.jsp" class="btn btn-primary">Sign up</a>
+                    </div>
                 </div>
                 
             </form>

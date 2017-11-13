@@ -18,35 +18,91 @@
     </head>
     <body>
 
-        <div class="main">
-            <button type="button"  class="btn btn-primary">View</button>
-            <button type="button" onclick="AddEmp()" class="btn btn-primary">Add</button>            
-            <button type="button" class="btn btn-primary">Update</button>
-            <button type="button" class="btn btn-primary">Delete</button> 
+        <div class="container">
+            <button  class="well" type="button" id="Back">Back</button>
+            <div class="col-lg-12 well">
+                <div class="row">
+                    <form action="loginServlet" method="post">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="FName" placeholder="Enter First Name Here.." class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="LName" placeholder="Enter Last Name Here.." class="form-control">
+                                </div>
+                            </div>		
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="text" id="DOB" name="DOB" placeholder="Enter Date of Birth Here.." class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Date of Hire</label>
+                                    <input type="text" id="DOH" name="DOH" placeholder="Enter Date of Hire Here.." class="form-control">
+                                </div>
+                            </div>	
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Address Line 1</label>
+                                    <input type="text" name="AddrL1" placeholder="Enter Address Line 1 Here.." class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Address Line 2</label>
+                                    <input type="text" name="AddrL2" placeholder="Enter Address Line 2 Here.." class="form-control">
+                                </div>
+                            </div>	
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label>City</label>
+                                    <input type="text" name="City" placeholder="Enter City Name Here.." class="form-control">
+                                </div>	
+                                <div class="col-sm-4 form-group">
+                                    <label>State</label>
+                                    <input type="text" name="State" placeholder="Enter State Name Here.." class="form-control">
+                                </div>	
+                                <div class="col-sm-4 form-group">
+                                    <label>Zip</label>
+                                    <input type="text" name="Zip" name="Zip" placeholder="Enter Zip Code Here.." class="form-control">
+                                </div>		
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Role</label>
+                                    <input type="text" name="Role" placeholder="Enter Designation Here.." class="form-control">
+                                </div>		
+                                <div class="col-sm-6 form-group">
+                                    <label>SSN</label>
+                                    <input type="text" name="SSN" name="SSN" placeholder="Enter SSN Here.." class="form-control">
+                                </div>	
+                            </div>						
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" name="PNo" placeholder="Enter Phone Number Here.." class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Alternate Phone Number</label>
+                                    <input type="text" name="APNo" placeholder="Enter Alternate Phone Number Here.." class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Email Address</label>
+                                    <input type="text" name="EAddr" placeholder="Enter Email Address Here.." class="form-control">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Fax Number</label>
+                                    <input type="text" id="FNo" name="FNo" placeholder="Enter Fax Number Here.." class="form-control">
+                                </div>
+                            </div>						
+                            <button type="submit" class="btn btn-lg btn-info">Add</button>					
+                        </div>
+                    </form> 
+                </div>
+            </div>
         </div>
-
-
-        </br></br></br></br>
-        <table id="tbl" class="table table-striped table-bordered"  cellspacing="0" width="100%"  >
-            <br/><br/><tr><td></td></tr> 
-            <tr>
-                <td><center><input type="text"required placeholder="First Name" name="First" maxlength="19">
-                <input type="text"required  placeholder="Last Name"  name="Last" maxlength="19"></center></td></tr>
-    <tr><td><center><input type="text" required placeholder="Role" name="Role" maxlength="20"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="SSN" name="SSN" maxlength="10"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Date of Birth" name="DateBirth" maxlength="20"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Date of Hired" name="DateHired" maxlength="20"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Address Line 1" name="Address1" maxlength="40">
-    <input type="text" required placeholder="Address Line 2" name="Address2" maxlength="40"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="City" name="City" maxlength="40">
-    <input type="text" required placeholder="State" name="State" maxlength="40"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Zip" name="Zip" maxlength="5"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Phone Number" name="PhoneNumber" maxlength="10">
-    <input type="text" required placeholder="Alt Phone Number" name="AltPhoneNumber" maxlength="10"></center></td></tr>
-<tr><td><center><input type="text" required placeholder="Email" name="Email" maxlength="40">
-    <input type="text" required placeholder="Fax Number" name="FaxNumber" maxlength="10"></center></td></tr>
-<tr><td><center><input type="submit" id="submit" value="Add"></center></td></tr> 
-</table>
-
-</body>
+    </body>
 </html>
