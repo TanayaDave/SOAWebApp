@@ -4,4 +4,6 @@
     <system systemId="http://dhcp141.merusouth118.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?xsd=1" uri="wsdl/dhcp141.merusouth118.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.xsd_1.xsd"/>
     <system systemId="http://dhcp253.merusouth126.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl" uri="wsdl/dhcp253.merusouth126.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl"/>
     <system systemId="http://dhcp253.merusouth126.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?xsd=1" uri="wsdl/dhcp253.merusouth126.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.xsd_1.xsd"/>
+    <system systemId="http://dhcp253.merusouth126.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl" uri="wsdl/dhcp253.merusouth126.iit.edu_8080/TruckShippingSystemWebServices/location.wsdl"/>
+    <system systemId="http://dhcp253.merusouth126.iit.edu:8080/TruckShippingSystemWebServices/location?xsd=1" uri="wsdl/dhcp253.merusouth126.iit.edu_8080/TruckShippingSystemWebServices/location.xsd_1.xsd"/>
 </catalog>

@@ -7,6 +7,10 @@
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.sjesu.webtruckshippingsystem.servlet.loginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PricingServlet</servlet-name>
+        <servlet-class>com.sjesu.webtruckshippingsystem.servlet.PricingServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -18,6 +22,10 @@
     <servlet-mapping>
         <servlet-name>EmployeeServlet</servlet-name>
         <url-pattern>/EmployeeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PricingServlet</servlet-name>
+        <url-pattern>/PricingServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

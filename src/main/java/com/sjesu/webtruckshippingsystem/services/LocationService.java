@@ -6,12 +6,16 @@
 package com.sjesu.webtruckshippingsystem.services;
 
 import com.sjesu.webtruckshippingsystem.domain.Location;
+import com.wsdl.Location_Service;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.lang.Exception;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Logger;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,24 +24,15 @@ import java.lang.Exception;
      *
      * @author shrikantjesu
  */
-@WebService(serviceName = "location")
+
 public class LocationService {
 
-    @WebMethod(operationName = "getLocationById")
-    public Location locationService(@WebParam(name = "locid") Integer loctid) throws Exception {
-
-        Location location = new Location();
-        try {
-            EntityManager em = Utility.createEntityManager();
-            EntityTransaction trans = em.getTransaction();
-            trans.begin();
-            location = em.find(Location.class, loctid);
-            trans.commit();
-            em.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return location;
-
+    public void addLocation(com.wsdl.Location loc) throws Exception{
+        Location_Service locServ = new Location_Service();
+        com.wsdl.LocationService proxy = locServ.getLocationServicePort();
+        proxy.createNewLocation(loc);
+        
     }
+    
+    private static final Logger LOG = Logger.getLogger(Location.class.getName());
 }
