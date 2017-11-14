@@ -14,5 +14,4 @@ package com.sjesu.webtruckshippingsystem.services;
  */
 public class PricingService {
 
-   
 }

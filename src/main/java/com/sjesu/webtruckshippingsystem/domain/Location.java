@@ -22,29 +22,18 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int locId;
     private String locName;
-    private int custId;
+    private int price;
     private String locCode;
-    @Embedded
-    private Address address;
-    @Embedded
-    private ContactDetails cotactDetails;
 
-    public Address getAddress() {
-        return address;
+    public int getPrice() {
+        return price;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setPrice(int price) {
+        this.price = price;
     }
-
-    public ContactDetails getCotactDetails() {
-        return cotactDetails;
-    }
-
-    public void setCotactDetails(ContactDetails cotactDetails) {
-        this.cotactDetails = cotactDetails;
-    }
-
+    
+    
     public String getLocCode() {
         return locCode;
     }
@@ -69,12 +58,5 @@ public class Location {
         this.locName = locName;
     }
 
-    public int getCustId() {
-        return custId;
-    }
-
-    public void setCustId(int custId) {
-        this.custId = custId;
-    }
-
+   
 }

@@ -17,8 +17,12 @@
         <title>Add Comments</title>    </head>
     </head>
     <body>
+        <jsp:include page="../navbar.jsp"></jsp:include>
+
         <div class="container">
-            <button  class="well" type="button" id="Back">Back</button>
+            <a href="${pageContext.request.contextPath}/PricingServlet">
+             <button  class="well" type="button" id="Back">Back</button>
+            </a> 
             <div class="col-lg-12 well">
                 <div class="row">
                     <form action="${pageContext.request.contextPath}/PricingServlet" method="post">

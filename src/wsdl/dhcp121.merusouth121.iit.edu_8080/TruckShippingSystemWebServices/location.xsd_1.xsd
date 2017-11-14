@@ -4,9 +4,52 @@
 
 <xs:element name="createNewLocationResponse" type="tns:createNewLocationResponse"/>
 
+<xs:element name="deleteLocation" type="tns:deleteLocation"/>
+
+<xs:element name="deleteLocationResponse" type="tns:deleteLocationResponse"/>
+
+<xs:element name="getAllLocation" type="tns:getAllLocation"/>
+
+<xs:element name="getAllLocationResponse" type="tns:getAllLocationResponse"/>
+
 <xs:element name="getLocationById" type="tns:getLocationById"/>
 
 <xs:element name="getLocationByIdResponse" type="tns:getLocationByIdResponse"/>
+
+<xs:element name="updateLocation" type="tns:updateLocation"/>
+
+<xs:element name="updateLocationResponse" type="tns:updateLocationResponse"/>
+
+<xs:complexType name="getAllLocation">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllLocationResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:location" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="location">
+<xs:sequence>
+<xs:element name="locCode" type="xs:string" minOccurs="0"/>
+<xs:element name="locId" type="xs:int"/>
+<xs:element name="locName" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateLocation">
+<xs:sequence>
+<xs:element name="arg0" type="tns:location" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateLocationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="getLocationById">
 <xs:sequence>
@@ -20,12 +63,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="location">
+<xs:complexType name="deleteLocation">
 <xs:sequence>
-<xs:element name="locCode" type="xs:string" minOccurs="0"/>
-<xs:element name="locId" type="xs:int"/>
-<xs:element name="locName" type="xs:string" minOccurs="0"/>
-<xs:element name="price" type="xs:int"/>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteLocationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

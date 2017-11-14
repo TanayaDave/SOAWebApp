@@ -24,7 +24,7 @@
             <li class="active"><a href="welcome.jsp" onclick='abc(event);'>Home</a></li>
             <li><a href="views/truck/viewTrucks.jsp" onclick='abc(event);'>Trucks</a></li>      
              <li><a href="#">Customers</a></li>
-            <li><a href="views/pricing/addPricing.jsp">Pricing</a></li>
+            <li><a href="PricingServlet">Pricing</a></li>
             <li><a href="#">Generate Invoices</a></li>
             <li><a href="views/maintenance/addMaintenance.jsp">Maintenance</a></li>
             <li><a href="EmployeeServlet">Employees</a></li>
