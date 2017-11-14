@@ -23,8 +23,20 @@
     <body>
 
         <div class="center_div">
-            <form class="form-horizontal justify-content-center" action="loginServlet" method="post">
+            <form class="form-horizontal justify-content-center" action="SignUpServlet" method="post">
                 <h2 class="text-center">Sign Up</h2>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Username:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="userName" placeholder="User Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Password:</label>
+                    <div class="col-sm-2">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                </div>
                 <div class="form-group justify-content-center">
                     <label class="col-sm-2 control-label">Name: </label>
                     <div class="col-sm-2">
@@ -72,7 +84,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-2 ">
-                        <button class="btn btn-primary" type="submit" name="signup" value="signup">Submit</button>
+                        <button class="btn btn-primary" type="submit" >Submit</button>
                         <a href="loginPage.jsp" class="btn btn-primary">Cancel</a>
                     </div>
 

@@ -7,14 +7,7 @@ package com.sjesu.webtruckshippingsystem.services;
 
 import com.sjesu.webtruckshippingsystem.domain.Location;
 import com.wsdl.Location_Service;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebService;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import java.lang.Exception;
-import java.util.Arrays;
-import java.util.List;
 import java.util.logging.Logger;
 /*
  * To change this license header, choose License Headers in Project Properties.

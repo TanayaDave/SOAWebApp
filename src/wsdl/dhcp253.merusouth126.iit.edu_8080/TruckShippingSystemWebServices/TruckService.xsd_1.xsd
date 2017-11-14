@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://services.group9.itmd566.iit.edu/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.group9.itmd566.iit.edu/">
+
+<xs:element name="createTruck" type="tns:createTruck"/>
+
+<xs:element name="createTruckResponse" type="tns:createTruckResponse"/>
+
+<xs:element name="getTruckDetailsById" type="tns:getTruckDetailsById"/>
+
+<xs:element name="getTruckDetailsByIdResponse" type="tns:getTruckDetailsByIdResponse"/>
+
+<xs:complexType name="getTruckDetailsById">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTruckDetailsByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:truck" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="truck">
+<xs:sequence>
+<xs:element name="capacity" type="xs:int"/>
+<xs:element name="color" type="xs:string" minOccurs="0"/>
+<xs:element name="drivers" type="tns:drivers" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="licPlateNo" type="xs:string" minOccurs="0"/>
+<xs:element name="make" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="vin" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="drivers">
+<xs:sequence>
+<xs:element name="driverType" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="license" type="xs:string" minOccurs="0"/>
+<xs:element name="licenseState" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="truck" type="tns:truck" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createTruck">
+<xs:sequence>
+<xs:element name="truck" type="tns:truck" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createTruckResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

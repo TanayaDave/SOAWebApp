@@ -95,7 +95,7 @@ public class loginServlet extends HttpServlet {
 //                response.sendRedirect("loginPage.jsp");
                 request.getRequestDispatcher("/loginPage.jsp").forward(request, response);
             } else {
-                loginSuccess = LoginService.userLogin(username, pass);
+                loginSuccess = new LoginService().userLogin(username, pass);
                 if (loginSuccess) {
                     if (username.equals("admin")) {
                         response.sendRedirect("welcome.jsp");

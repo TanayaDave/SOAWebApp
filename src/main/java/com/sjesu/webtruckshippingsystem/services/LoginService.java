@@ -5,9 +5,8 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
-import com.sjesu.webtruckshippingsystem.domain.User;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
+import com.wsdl.LoginService_Service;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,9 +14,17 @@ import javax.persistence.EntityTransaction;
  */
 public class LoginService {
 
-    public static boolean userLogin(String userName, String passoword) {
-        EntityManager em = Utility.createEntityManager();
-        EntityTransaction trans = em.getTransaction();
+    LoginService_Service loginService;
+    com.wsdl.LoginService loginProxy;
+
+    public LoginService() {
+        loginService = new LoginService_Service();
+        loginProxy = loginService.getLoginServicePort();
+    }
+
+    public boolean userLogin(String userName, String passoword) {
+//        EntityManager em = Utility.createEntityManager();
+//        EntityTransaction trans = em.getTransaction();
 
 //        trans.begin();
 //        User user1 = new User();
@@ -26,17 +33,24 @@ public class LoginService {
 //        user1.setUserType("admin");
 //        em.persist(user1);
 //        trans.commit();
+//        trans.begin();
+//        User user = em.createNamedQuery("User.findUserByUsername", User.class).setParameter("username", userName).getSingleResult();
+//        if (user.getUserName().equals(userName) && user.getPassword().equals(passoword)) {
+        //            if (user.getUserName().equals("admin")) {
+        //                return "admin";
+        //            } else {
+        //                return "emp";
+        //            }
+//            return true;
+//        }
+        LOG.info("loginTest");
+        boolean loginStatus = loginProxy.userLogin(userName, passoword);
+        LOG.info("loginTestB"+loginStatus);
+        return loginStatus;
+    }
+    private static final Logger LOG = Logger.getLogger(LoginService.class.getName());
 
-        trans.begin();
-        User user = em.createNamedQuery("User.findUserByUsername", User.class).setParameter("username", userName).getSingleResult();
-        if (user.getUserName().equals(userName) && user.getPassword().equals(passoword)) {
-            //            if (user.getUserName().equals("admin")) {
-            //                return "admin";
-            //            } else {
-            //                return "emp";
-            //            }
-            return true;
-        }
-        return false;
+    public Boolean createUser(com.wsdl.User user) {
+        return loginProxy.createUser(user);
     }
 }
