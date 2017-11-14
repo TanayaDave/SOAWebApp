@@ -23,8 +23,7 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="welcome.jsp" onclick='abc(event);'>Home</a></li>
             <li><a href="views/truck/viewTrucks.jsp" onclick='abc(event);'>Trucks</a></li>      
-            <li><a href="#">Orders</a></li>
-            <li><a href="#">Customers</a></li>
+             <li><a href="#">Customers</a></li>
             <li><a href="views/pricing/addPricing.jsp">Pricing</a></li>
             <li><a href="#">Generate Invoices</a></li>
             <li><a href="views/maintenance/addMaintenance.jsp">Maintenance</a></li>
