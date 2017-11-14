@@ -4,6 +4,10 @@
 
 <xs:element name="createMaintenanceResponse" type="tns:createMaintenanceResponse"/>
 
+<xs:element name="deleteMaintenanceById" type="tns:deleteMaintenanceById"/>
+
+<xs:element name="deleteMaintenanceByIdResponse" type="tns:deleteMaintenanceByIdResponse"/>
+
 <xs:element name="getAllMaintenance" type="tns:getAllMaintenance"/>
 
 <xs:element name="getAllMaintenanceResponse" type="tns:getAllMaintenanceResponse"/>
@@ -11,6 +15,10 @@
 <xs:element name="getMaintenanceById" type="tns:getMaintenanceById"/>
 
 <xs:element name="getMaintenanceByIdResponse" type="tns:getMaintenanceByIdResponse"/>
+
+<xs:element name="updateMaintenanceById" type="tns:updateMaintenanceById"/>
+
+<xs:element name="updateMaintenanceByIdResponse" type="tns:updateMaintenanceByIdResponse"/>
 
 <xs:complexType name="createMaintenance">
 <xs:sequence>
@@ -54,5 +62,27 @@
 <xs:sequence>
 <xs:element name="return" type="tns:maintenance" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteMaintenanceById">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteMaintenanceByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:maintenance" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMaintenanceById">
+<xs:sequence>
+<xs:element name="maintenance" type="tns:maintenance" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateMaintenanceByIdResponse">
+<xs:sequence/>
 </xs:complexType>
 </xs:schema>

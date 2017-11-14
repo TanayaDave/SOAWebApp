@@ -189,24 +189,6 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/maintenance.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName>com.wsdl</packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/maintenance.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-maintenance</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
                                 <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName>com.wsdl</packageName>
@@ -217,6 +199,24 @@
                             <staleFile>${project.build.directory}/jaxws/stale/EmployeeService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-EmployeeService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/maintenance.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>com.wsdl</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/maintenance.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-maintenance</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

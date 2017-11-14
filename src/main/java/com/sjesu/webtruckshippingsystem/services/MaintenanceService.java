@@ -7,6 +7,9 @@ package com.sjesu.webtruckshippingsystem.services;
 
 import com.sjesu.webtruckshippingsystem.domain.Maintenance;
 import com.wsdl.Maintenance_Service;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /*
@@ -18,13 +21,67 @@ import java.util.logging.Logger;
      * @author shrikantjesu
  */
 public class MaintenanceService {
-
-    public void addMaintenance(com.wsdl.Maintenance main) {
+             
+    public List<com.wsdl.Maintenance> maintenanceService() throws Exception {
+        
+        Maintenance main = new Maintenance();
+        Maintenance_Service mainServ = new Maintenance_Service();
+        com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
+        LOG.info("list");
+        List<com.wsdl.Maintenance> mainList = proxy.getAllMaintenance();
+        LOG.info("list"+Arrays.asList(mainList));
+        return mainList;
+        
+    }
+    
+    public void addMaintenance(com.wsdl.Maintenance main){
         Maintenance_Service mainServ = new Maintenance_Service();
         com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
         proxy.createMaintenance(main);
+      
+    }
+    
+    
+   
+   public com.wsdl.Maintenance getMaintenanceById(int id){
+
+        Maintenance main = new Maintenance();
+        Maintenance_Service mainServ = new Maintenance_Service();
+        com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
+        LOG.info("list");
+        com.wsdl.Maintenance mainList1 = proxy.getMaintenanceById(id);       
+        LOG.info("list"+Arrays.asList(mainList1));
+        return mainList1;
 
     }
 
-    private static final Logger LOG = Logger.getLogger(Maintenance.class.getName());
+         public void updateMaintenance(com.wsdl.Maintenance main){
+        try {
+            Maintenance_Service mainServ = new Maintenance_Service();
+            com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
+            proxy.updateMaintenanceById(main);                      
+        } catch (Exception ex) {
+            Logger.getLogger(MaintenanceService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+
+    
+     
+     public void deleteById(int id){
+
+        try {
+            Maintenance main = new Maintenance();
+             Maintenance_Service mainServ = new Maintenance_Service();
+            com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();            
+            LOG.info("list");
+            proxy.deleteMaintenanceById(id);
+                      
+        } catch (Exception ex) {
+            Logger.getLogger(MaintenanceService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+    
+    
+
+     private static final Logger LOG = Logger.getLogger(Maintenance.class.getName());
 }

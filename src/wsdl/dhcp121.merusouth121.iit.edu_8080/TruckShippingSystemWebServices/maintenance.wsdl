@@ -22,6 +22,18 @@
 <message name="getAllMaintenanceResponse">
 <part name="parameters" element="tns:getAllMaintenanceResponse"/>
 </message>
+<message name="deleteMaintenanceById">
+<part name="parameters" element="tns:deleteMaintenanceById"/>
+</message>
+<message name="deleteMaintenanceByIdResponse">
+<part name="parameters" element="tns:deleteMaintenanceByIdResponse"/>
+</message>
+<message name="updateMaintenanceById">
+<part name="parameters" element="tns:updateMaintenanceById"/>
+</message>
+<message name="updateMaintenanceByIdResponse">
+<part name="parameters" element="tns:updateMaintenanceByIdResponse"/>
+</message>
 <portType name="MaintenanceService">
 <operation name="getMaintenanceById">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getMaintenanceByIdRequest" message="tns:getMaintenanceById"/>
@@ -34,6 +46,14 @@
 <operation name="getAllMaintenance">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getAllMaintenanceRequest" message="tns:getAllMaintenance"/>
 <output wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getAllMaintenanceResponse" message="tns:getAllMaintenanceResponse"/>
+</operation>
+<operation name="deleteMaintenanceById">
+<input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/deleteMaintenanceByIdRequest" message="tns:deleteMaintenanceById"/>
+<output wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/deleteMaintenanceByIdResponse" message="tns:deleteMaintenanceByIdResponse"/>
+</operation>
+<operation name="updateMaintenanceById">
+<input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/updateMaintenanceByIdRequest" message="tns:updateMaintenanceById"/>
+<output wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/updateMaintenanceByIdResponse" message="tns:updateMaintenanceByIdResponse"/>
 </operation>
 </portType>
 <binding name="MaintenanceServicePortBinding" type="tns:MaintenanceService">
@@ -57,6 +77,24 @@
 </output>
 </operation>
 <operation name="getAllMaintenance">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteMaintenanceById">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateMaintenanceById">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

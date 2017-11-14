@@ -11,8 +11,10 @@ import static com.sjesu.webtruckshippingsystem.services.Utility.formatDate;
 import com.wsdl.Maintenance;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -38,37 +40,89 @@ public class MaintenanceServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MaintenanceServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MaintenanceServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+          
+     private static final long serialVersionUID = 1L;
+    private MaintenanceService maint;
+    private MaintenanceService maint1;
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                               
+         try{
+             
+             maint = new MaintenanceService();
+             
+            String id = request.getParameter("param1");
+            String del = request.getParameter("delete");
+            String back = request.getParameter("back");
+             
+             
+            if (id != null) {
+                Maintenance dat = maint.getMaintenanceById(Integer.parseInt(id));
+                response.setContentType("text/html;charset=UTF-8");
+                List<com.wsdl.Maintenance> singleMain = new ArrayList<>();
+                singleMain.add(dat);
+               
+
+                request.setAttribute("main", singleMain);
+                LOG.info("test2");
+                getServletContext().getRequestDispatcher("/views/maintenance/editMaintenance.jsp")
+                        .forward(request, response);
+                LOG.info(dat.getDesc());
+
+                return;
+            }
+            
+            
+            if (back !=null){
+                            List<com.wsdl.Maintenance> mainlist = maint.maintenanceService();
+            LOG.info("test1");
+            response.setContentType("text/html;charset=UTF-8");
+
+            request.setAttribute("mainlist", mainlist);
+            LOG.info("test2");
+            getServletContext().getRequestDispatcher("/views/maintenance/maintenance.jsp")
+                    .forward(request, response);
+            return;
+
+            }
+            
+             if (del != null) {
+                 maint.deleteById(Integer.parseInt(del.replaceAll(" ", "")));
+                
+            LOG.info("test");
+            List<com.wsdl.Maintenance> mainlist = maint.maintenanceService();
+            LOG.info("test1");
+            response.setContentType("text/html;charset=UTF-8");
+
+            request.setAttribute("mainlist", mainlist);
+            LOG.info("test2");
+            getServletContext().getRequestDispatcher("/views/maintenance/maintenance.jsp")
+                    .forward(request, response);
+            return;
+            }
+            
+             
+             LOG.info("test");
+             
+             List<com.wsdl.Maintenance> mainlist = maint.maintenanceService();
+             LOG.info("test1");
+             response.setContentType("text/html;charset=UTF-8");
+             
+             request.setAttribute("mainlist", mainlist);
+             LOG.info("test2");
+             getServletContext().getRequestDispatcher("/views/maintenance/maintenance.jsp")
+                     .forward(request,response);             
+              LOG.info(mainlist.get(0).getDesc());
+             
+         } catch(Exception ex){
+             Logger.getLogger(MaintenanceServlet.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
     }
+    
+     private static final Logger LOG = Logger.getLogger(EmployeeServlet.class.getName());
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -89,9 +143,9 @@ public class MaintenanceServlet extends HttpServlet {
          String description = request.getParameter("description");
          String cost = request.getParameter("cost");
          String status = request.getParameter("status");
-         Maintenance main = new Maintenance();
-         main.setCost(Double.parseDouble(cost));
-         main.setDesc(description);     
+         Maintenance maint = new Maintenance();
+         maint.setCost(Double.parseDouble(cost));
+         maint.setDesc(description);     
          try {
 
                 gregory.setTime(date1);
@@ -101,11 +155,19 @@ public class MaintenanceServlet extends HttpServlet {
             } catch (DatatypeConfigurationException ex) {
                 Logger.getLogger(loginServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-         main.setDate(dateXML);         
-         main.setStatus(status);
+         maint.setDate(dateXML);         
+         maint.setStatus(status);
+         maint1 = new MaintenanceService();
          MaintenanceService mainServ= new MaintenanceService();
         try {
-            mainServ.addMaintenance(main);
+            mainServ.addMaintenance(maint);
+            List<com.wsdl.Maintenance> mainlist = maint1.maintenanceService();
+            LOG.info("test1");
+                response.setContentType("text/html;charset=UTF-8");
+
+                request.setAttribute("mainlist", mainlist);
+                getServletContext().getRequestDispatcher("/views/maintenance/maintenance.jsp")
+                        .forward(request, response);
         } catch (Exception ex) {
             Logger.getLogger(MaintenanceServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
