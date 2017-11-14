@@ -9,6 +9,10 @@ import com.sjesu.webtruckshippingsystem.services.TruckService;
 import com.wsdl.Truck;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +23,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author shrikantjesu
  */
 public class TruckServlet extends HttpServlet {
+
+    TruckService truckService;
+    List<Truck> singleTruck;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -32,7 +39,36 @@ public class TruckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        try {
+            truckService = new TruckService();
+            String id = request.getParameter("param1");
+            String del = request.getParameter("delete");
+            String back = request.getParameter("back");
+
+            if (id != null) {
+                Truck truck = truckService.getTruckById(Integer.parseInt(id));
+                singleTruck = new ArrayList<>();
+                singleTruck.add(truck);
+                request.setAttribute("truckList", singleTruck);
+                LOG.info("reach0"+truck.getColor()+"sdf");
+                request.getRequestDispatcher("/views/truck/editTruck.jsp").forward(request, response);
+                
+                return;
+            }
+            if(del!=null){
+                LOG.info("reach00");
+                truckService.deleteTruck(Integer.parseInt(del));
+                LOG.info("reach001");
+            }
+            List<Truck> truckList = new TruckService().getTruckList();
+            request.setAttribute("truckList", truckList);
+            LOG.info("reach" + Arrays.asList(truckList));
+            getServletContext().getRequestDispatcher("/views/truck/viewTrucks.jsp").forward(request, response);
+        } catch (Exception e) {
+        }
+
     }
+    private static final Logger LOG = Logger.getLogger(TruckServlet.class.getName());
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -51,7 +87,8 @@ public class TruckServlet extends HttpServlet {
         String truckType = request.getParameter("truckType");
         String plateNo = request.getParameter("plateNo");
         String mYear = request.getParameter("mYear");
-
+        String truckId = request.getParameter("update");
+        
         Truck truck = new Truck();
         truck.setVin(vin);
         truck.setColor(color);
@@ -61,8 +98,12 @@ public class TruckServlet extends HttpServlet {
         truck.setYear(mYear);
 
         TruckService truckService = new TruckService();
+        if(truckId!=null){
+            truck.setId(Integer.parseInt(truckId));
+            truckService.updateTruck(truck);
+        }else
         truckService.createTruck(truck);
-        request.getRequestDispatcher("views/truck/viewTrucks.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/TruckServlet");
     }
 
     /**

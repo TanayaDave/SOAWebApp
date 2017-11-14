@@ -9,8 +9,6 @@
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?WSDL" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/maintenance.wsdl"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/maintenance.xsd_1.xsd"/>
-    <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/TruckService.wsdl"/>
-    <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/TruckService.xsd_1.xsd"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.wsdl"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.xsd_1.xsd"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl"/>
@@ -19,4 +17,6 @@
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/LoginService?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/LoginService.xsd_1.xsd"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/location.wsdl"/>
     <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/location?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/location.xsd_1.xsd"/>
+    <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?wsdl" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/TruckService.wsdl"/>
+    <system systemId="http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?xsd=1" uri="wsdl/dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/TruckService.xsd_1.xsd"/>
 </catalog>

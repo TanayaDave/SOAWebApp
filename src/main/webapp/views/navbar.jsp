@@ -10,11 +10,6 @@
         window.location = '/SOAWebApp/' + href;
     }
 </script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="CSS/style.css">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -22,12 +17,13 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="welcome.jsp" onclick='abc(event);'>Home</a></li>
-            <li><a href="views/truck/viewTrucks.jsp" onclick='abc(event);'>Trucks</a></li>      
+            <li><a href="TruckServlet" onclick='abc(event);'>Trucks</a></li>      
+            <li><a href="#">Orders</a></li>
              <li><a href="#">Customers</a></li>
-            <li><a href="PricingServlet">Pricing</a></li>
+            <li><a href="PricingServlet" onclick='abc(event);'>Pricing</a></li>
             <li><a href="#">Generate Invoices</a></li>
             <li><a href="views/maintenance/addMaintenance.jsp">Maintenance</a></li>
-            <li><a href="EmployeeServlet">Employees</a></li>
+            <li><a href="EmployeeServlet" onclick='abc(event);'>Employees</a></li>
             <li><a href="#">View Comments</a></li>
         </ul>
     </div>

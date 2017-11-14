@@ -5,9 +5,12 @@
  */
 package com.sjesu.webtruckshippingsystem.services;
 
+import com.wsdl.Exception_Exception;
 import com.wsdl.Truck;
 import com.wsdl.TruckService_Service;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,8 +30,26 @@ public class TruckService {
         truckProxy.createTruck(truck);
     }
 
-//    public List<Truck> getTruckList() {
-//        truckProxy.
-//    }
+    public List<Truck> getTruckList() {
+        return truckProxy.getAllTrucks();
+    }
+
+    public Truck getTruckById(int id) {
+        return truckProxy.getTruckDetailsById(id);
+    }
+
+    public boolean updateTruck(Truck truck) {
+        return truckProxy.updateTruck(truck);
+    }
+    
+    public boolean deleteTruck(int id){
+        try {
+            truckProxy.deleteTruck(id);
+        } catch (Exception_Exception ex) {
+            Logger.getLogger(TruckService.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        return true;
+    }
 
 }

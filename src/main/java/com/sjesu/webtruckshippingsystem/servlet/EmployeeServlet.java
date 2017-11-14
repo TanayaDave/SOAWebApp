@@ -171,7 +171,7 @@ public class EmployeeServlet extends HttpServlet {
             String PNo = request.getParameter("PNo");
             String EAddr = request.getParameter("EAddr");
             String sfno = request.getParameter("FNo");
-            int FNo = Integer.parseInt(sfno.replaceAll(" ", ""));
+            int FNo = Integer.parseInt(sfno);
             String SSN = request.getParameter("SSN");
             LOG.info("SSN:" + SSN);
             int SSNint = Integer.parseInt(SSN.replaceAll(" ", ""));
