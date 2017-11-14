@@ -1,10 +1,16 @@
 package com.sjesu.webtruckshippingsystem.domain;
 
+import com.group9.truckshippingsystem.security.Group;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -32,6 +38,29 @@ public class User {
     private String password;
 
     private String userType;
+
+    @ManyToMany
+    @JoinTable(name = "sec_user_groups",
+            joinColumns = @JoinColumn(name = "USERNAME"),
+            inverseJoinColumns = @JoinColumn(name = "GROUPNAME"))
+    private List<Group> groups = new ArrayList<>();
+
+    /**
+     * Add new group.
+     *
+     * @param g new group object
+     */
+    public void addGroups(Group g) {
+        this.groups.add(g);
+        g.getUsers().add(this);
+    }
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
 
     /**
      * Get the value of userType

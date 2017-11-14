@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class MaintenanceService {
              
-    public List<com.wsdl.Maintenance> maintenanceService() throws Exception {
+    public List<com.wsdl.Maintenance> maintenanceService() {
         
         Maintenance main = new Maintenance();
         Maintenance_Service mainServ = new Maintenance_Service();
@@ -56,29 +56,20 @@ public class MaintenanceService {
     }
 
          public void updateMaintenance(com.wsdl.Maintenance main){
-        try {
-            Maintenance_Service mainServ = new Maintenance_Service();
-            com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
-            proxy.updateMaintenanceById(main);                      
-        } catch (Exception ex) {
-            Logger.getLogger(MaintenanceService.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             Maintenance_Service mainServ = new Maintenance_Service();
+             com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
+             proxy.updateMaintenanceById(main);
      }
 
     
      
      public void deleteById(int id){
 
-        try {
-            Maintenance main = new Maintenance();
-             Maintenance_Service mainServ = new Maintenance_Service();
-            com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();            
-            LOG.info("list");
-            proxy.deleteMaintenanceById(id);
-                      
-        } catch (Exception ex) {
-            Logger.getLogger(MaintenanceService.class.getName()).log(Level.SEVERE, null, ex);
-        }
+         Maintenance main = new Maintenance();
+         Maintenance_Service mainServ = new Maintenance_Service();
+         com.wsdl.MaintenanceService proxy = mainServ.getMaintenanceServicePort();
+         LOG.info("list");
+         proxy.deleteMaintenanceById(id);
      }
     
     

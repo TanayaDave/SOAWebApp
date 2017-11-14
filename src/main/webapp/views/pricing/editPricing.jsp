@@ -43,17 +43,17 @@
                                 <div class="row">
                                     <div class="col-sm-6 form-group">
                                         <label>Location Code</label>
-                                        <input type="text" name="loccode" value="<c:out value="${loc.locCode}" /> " placeholder="Enter Location code Here.." class="form-control">
+                                        <input type="text" name="loccode" value="<c:out value="${loc.locCode}"/>" placeholder="Enter Location code Here.." class="form-control">
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label>Location name</label>
-                                        <input type="text" name="locname" value="<c:out value="${loc.locName}" /> " placeholder="Enter Loc name.." class="form-control">
+                                        <input type="text" name="locname" value="<c:out value="${loc.locName}"/>" placeholder="Enter Loc name.." class="form-control">
                                     </div>
                                 </div>		
                                 <div class="row">
                                     <div class="col-sm-6 form-group">
                                         <label>Price</label>
-                                        <input type="text" id="DOB" name="price" value="<c:out value="${loc.price}" /> " placeholder="price" class="form-control">
+                                        <input type="text" id="DOB" name="price" value="<c:out value="${loc.price}"/>" placeholder="price" class="form-control">
                                     </div>
                                 <button type="submit" class="btn btn-lg btn-info">Submit</button>					
                             </div>

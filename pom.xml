@@ -117,16 +117,16 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.wsdl</wsdlFile>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/maintenance.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName>com.wsdl</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/CustomerService.stale</staleFile>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/maintenance.stale</staleFile>
                         </configuration>
-                        <id>wsimport-generate-CustomerService</id>
+                        <id>wsimport-generate-maintenance</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
@@ -135,67 +135,13 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/TruckService.wsdl</wsdlFile>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName>com.wsdl</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/TruckService.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-TruckService</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/location.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName>com.wsdl</packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/location.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-location</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/LoginService.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName>com.wsdl</packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/LoginService?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/LoginService.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-LoginService</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/EmployeeService.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName>com.wsdl</packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl</wsdlLocation>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/EmployeeService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-EmployeeService</id>
@@ -207,16 +153,70 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>dhcp121.merusouth121.iit.edu_8080/TruckShippingSystemWebServices/maintenance.wsdl</wsdlFile>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/LoginService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName>com.wsdl</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/maintenance.stale</staleFile>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/LoginService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/LoginService.stale</staleFile>
                         </configuration>
-                        <id>wsimport-generate-maintenance</id>
+                        <id>wsimport-generate-LoginService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/location.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>com.wsdl</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/location.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-location</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/TruckService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>com.wsdl</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/TruckService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/TruckService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-TruckService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>com.wsdl</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/CustomerService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-CustomerService</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

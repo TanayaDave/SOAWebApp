@@ -44,25 +44,25 @@
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Date</label>
-                                    <input type="text" name="date" value="<c:out value="${main.date}" /> " placeholder="DD-MM-YYYY" class="form-control">
+                                    <input type="text" name="date" value="<c:out value="${main.date}"/>" placeholder="DD-MM-YYYY" class="form-control">
                                 </div>                                
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Cost</label>
-                                    <input type="text" name="cost" value="<c:out value="${main.cost}" /> " placeholder="Enter Cost Here.." class="form-control">
+                                    <input type="text" name="cost" value="<c:out value="${main.cost}"/>" placeholder="Enter Cost Here.." class="form-control">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Description</label>
-                                    <input type="text" name="description" value="<c:out value="${main.desc}" /> " placeholder="Enter Description Here.." class="form-control">
+                                    <input type="text" name="description" value="<c:out value="${main.desc}"/>" placeholder="Enter Description Here.." class="form-control">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Status</label>
-                                    <input type="text" name="status" value="<c:out value="${main.status}" /> " placeholder="Enter Status Here.." class="form-control">
+                                    <input type="text" name="status" value="<c:out value="${main.status}"/>" placeholder="Enter Status Here.." class="form-control">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-lg btn-info">Submit</button>
