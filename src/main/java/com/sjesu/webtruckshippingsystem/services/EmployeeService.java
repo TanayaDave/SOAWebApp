@@ -7,8 +7,10 @@ package com.sjesu.webtruckshippingsystem.services;
 
 import com.wsdl.Employee;
 import com.wsdl.EmployeeService_Service;
+import com.wsdl.Exception_Exception;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /*
@@ -21,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class EmployeeService {
 
-    public List<com.wsdl.Employee> employeeService() throws Exception {
+    public List<com.wsdl.Employee> employeeService(){
 
         Employee emp = new Employee();
         EmployeeService_Service empServ = new EmployeeService_Service();
@@ -33,7 +35,7 @@ public class EmployeeService {
 
     }
     
-     public Employee getEmployeeById(int id) throws Exception {
+     public Employee getEmployeeById(int id){
 
         Employee emp = new Employee();
         EmployeeService_Service empServ = new EmployeeService_Service();
@@ -45,25 +47,37 @@ public class EmployeeService {
 
     }
      
-     public void deleteById(int id) throws Exception {
+     public void deleteById(int id){
 
-        Employee emp = new Employee();
-        EmployeeService_Service empServ = new EmployeeService_Service();
-        com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
-        LOG.info("list");
-        proxy.deleteEmployee(id);
+        try {
+            Employee emp = new Employee();
+            EmployeeService_Service empServ = new EmployeeService_Service();
+            com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
+            LOG.info("list");
+            proxy.deleteEmployee(id);
+        } catch (Exception_Exception ex) {
+            Logger.getLogger(EmployeeService.class.getName()).log(Level.SEVERE, null, ex);
+        }
      }
     
-    public void newEmployee(com.wsdl.Employee emp) throws Exception {
-        EmployeeService_Service empServ = new EmployeeService_Service();
-        com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
-        proxy.createEmployee(emp);
+    public void newEmployee(com.wsdl.Employee emp){
+        try {
+            EmployeeService_Service empServ = new EmployeeService_Service();
+            com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
+            proxy.createEmployee(emp);
+        } catch (Exception_Exception ex) {
+            Logger.getLogger(EmployeeService.class.getName()).log(Level.SEVERE, null, ex);
+        }
      }
     
-     public void updateEmployee(com.wsdl.Employee emp) throws Exception {
-        EmployeeService_Service empServ = new EmployeeService_Service();
-        com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
-        proxy.updateEmployee(emp);
+     public void updateEmployee(com.wsdl.Employee emp){
+        try {
+            EmployeeService_Service empServ = new EmployeeService_Service();
+            com.wsdl.EmployeeService proxy = empServ.getEmployeeServicePort();
+            proxy.updateEmployee(emp);
+        } catch (Exception_Exception ex) {
+            Logger.getLogger(EmployeeService.class.getName()).log(Level.SEVERE, null, ex);
+        }
      }
     
     private static final Logger LOG = Logger.getLogger(EmployeeService.class.getName());
