@@ -136,6 +136,7 @@ public class MaintenanceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String mainid = request.getParameter("update");
          GregorianCalendar gregory = new GregorianCalendar(); 
          XMLGregorianCalendar dateXML = null;
          String date = request.getParameter("date");
@@ -145,7 +146,10 @@ public class MaintenanceServlet extends HttpServlet {
          String status = request.getParameter("status");
          Maintenance maint = new Maintenance();
          maint.setCost(Double.parseDouble(cost));
-         maint.setDesc(description);     
+         maint.setDesc(description);   
+         if (mainid !=null){
+             maint.setId(Integer.parseInt(mainid));
+            }
          try {
 
                 gregory.setTime(date1);
@@ -158,9 +162,13 @@ public class MaintenanceServlet extends HttpServlet {
          maint.setDate(dateXML);         
          maint.setStatus(status);
          maint1 = new MaintenanceService();
-         MaintenanceService mainServ= new MaintenanceService();
-        try {
-            mainServ.addMaintenance(maint);
+         try {
+                if (mainid != null) {                   
+                    maint1.updateMaintenance(maint);
+
+                } else {
+                    maint1.addMaintenance(maint);
+                }                                              
             List<com.wsdl.Maintenance> mainlist = maint1.maintenanceService();
             LOG.info("test1");
                 response.setContentType("text/html;charset=UTF-8");
