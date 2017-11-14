@@ -16,6 +16,12 @@
 <message name="createMaintenanceResponse">
 <part name="parameters" element="tns:createMaintenanceResponse"/>
 </message>
+<message name="getAllMaintenance">
+<part name="parameters" element="tns:getAllMaintenance"/>
+</message>
+<message name="getAllMaintenanceResponse">
+<part name="parameters" element="tns:getAllMaintenanceResponse"/>
+</message>
 <portType name="MaintenanceService">
 <operation name="getMaintenanceById">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getMaintenanceByIdRequest" message="tns:getMaintenanceById"/>
@@ -24,6 +30,10 @@
 <operation name="createMaintenance">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/createMaintenanceRequest" message="tns:createMaintenance"/>
 <output wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/createMaintenanceResponse" message="tns:createMaintenanceResponse"/>
+</operation>
+<operation name="getAllMaintenance">
+<input wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getAllMaintenanceRequest" message="tns:getAllMaintenance"/>
+<output wsam:Action="http://services.group9.itmd566.iit.edu/MaintenanceService/getAllMaintenanceResponse" message="tns:getAllMaintenanceResponse"/>
 </operation>
 </portType>
 <binding name="MaintenanceServicePortBinding" type="tns:MaintenanceService">
@@ -38,6 +48,15 @@
 </output>
 </operation>
 <operation name="createMaintenance">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getAllMaintenance">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

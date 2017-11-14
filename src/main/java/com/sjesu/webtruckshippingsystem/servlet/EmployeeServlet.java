@@ -11,6 +11,7 @@ import com.wsdl.Address;
 import com.wsdl.ContactDetails;
 import com.wsdl.Employee;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -57,8 +58,44 @@ public class EmployeeServlet extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            LOG.info("test");
             emp = new EmployeeService();
+
+            String id = request.getParameter("param1");
+            String del = request.getParameter("delete");
+            String back = request.getParameter("back");
+
+            if (id != null) {
+                Employee dat = emp.getEmployeeById(Integer.parseInt(id));
+                response.setContentType("text/html;charset=UTF-8");
+                List<com.wsdl.Employee> singleEmp = new ArrayList<>();
+                singleEmp.add(dat);
+
+                request.setAttribute("emp", singleEmp);
+                LOG.info("test2");
+                getServletContext().getRequestDispatcher("/views/employee/editEmployee.jsp")
+                        .forward(request, response);
+                LOG.info(dat.getEmpFirstName());
+
+                return;
+            }
+
+            if (back !=null){
+                            List<com.wsdl.Employee> emplist = emp.employeeService();
+            LOG.info("test1");
+            response.setContentType("text/html;charset=UTF-8");
+
+            request.setAttribute("emplist", emplist);
+            LOG.info("test2");
+            getServletContext().getRequestDispatcher("/views/employee/employees.jsp")
+                    .forward(request, response);
+            return;
+
+            }
+            
+            
+            if (del != null) {
+                emp.deleteById(Integer.parseInt(del.replaceAll(" ", "")));
+            LOG.info("test");
             List<com.wsdl.Employee> emplist = emp.employeeService();
             LOG.info("test1");
             response.setContentType("text/html;charset=UTF-8");
@@ -67,6 +104,19 @@ public class EmployeeServlet extends HttpServlet {
             LOG.info("test2");
             getServletContext().getRequestDispatcher("/views/employee/employees.jsp")
                     .forward(request, response);
+            return;
+            }
+
+            LOG.info("test");
+            List<com.wsdl.Employee> emplist = emp.employeeService();
+            LOG.info("test1");
+            response.setContentType("text/html;charset=UTF-8");
+
+            request.setAttribute("emplist", emplist);
+            LOG.info("test2");
+            getServletContext().getRequestDispatcher("/views/employee/employees.jsp")
+                    .forward(request, response);
+
             LOG.info(emplist.get(0).getEmpFirstName());
 
         } catch (Exception ex) {
@@ -74,8 +124,8 @@ public class EmployeeServlet extends HttpServlet {
         }
     }
     private static final Logger LOG = Logger.getLogger(EmployeeServlet.class.getName());
-    
-     /**
+
+    /**
      * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
@@ -87,7 +137,7 @@ public class EmployeeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-
+            String eid = request.getParameter("update");
             GregorianCalendar gregory = new GregorianCalendar();
             String DOB = request.getParameter("DOB");
             String DOH = request.getParameter("DOH");
@@ -108,8 +158,7 @@ public class EmployeeServlet extends HttpServlet {
             } catch (DatatypeConfigurationException ex) {
                 Logger.getLogger(loginServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-
-            String FName = request.getParameter("FName");
+             String FName = request.getParameter("FName");
             String LName = request.getParameter("LName");
             String AddrL1 = request.getParameter("AddrL1");
             String AddrL2 = request.getParameter("AddrL2");
@@ -117,18 +166,22 @@ public class EmployeeServlet extends HttpServlet {
             String State = request.getParameter("State");
             String Zip = request.getParameter("Zip");
             LOG.info("zip:" + Zip);
-            int Zipint = Integer.parseInt(Zip);
+            int Zipint = Integer.parseInt(Zip.replaceAll(" ", ""));
             String APNo = request.getParameter("APNo");
             String PNo = request.getParameter("PNo");
             String EAddr = request.getParameter("EAddr");
-            int FNo = Integer.parseInt(request.getParameter("FNo"));
+            String sfno = request.getParameter("FNo");
+            int FNo = Integer.parseInt(sfno.replaceAll(" ", ""));
             String SSN = request.getParameter("SSN");
             LOG.info("SSN:" + SSN);
-            int SSNint = Integer.parseInt(SSN);
+            int SSNint = Integer.parseInt(SSN.replaceAll(" ", ""));
             String Role = request.getParameter("Role");
             Employee emp = new Employee();
             Address addr = new Address();
             ContactDetails cd = new ContactDetails();
+            if (eid !=null){
+             emp.setId(Integer.parseInt(eid));
+            }
             emp.setEmpFirstName(FName);
             emp.setEmpLastName(LName);
             emp.setSsn(SSNint);
@@ -148,7 +201,12 @@ public class EmployeeServlet extends HttpServlet {
             emp.setCotactDetails(cd);
             emp1 = new EmployeeService();
             try {
-                emp1.updateEmployee(emp);
+                if (eid != null) {
+                    emp1.updateEmployee(emp);
+
+                } else {
+                    emp1.newEmployee(emp);
+                }
                 List<com.wsdl.Employee> emplist = emp1.employeeService();
                 LOG.info("test1");
                 response.setContentType("text/html;charset=UTF-8");
@@ -156,6 +214,7 @@ public class EmployeeServlet extends HttpServlet {
                 request.setAttribute("emplist", emplist);
                 getServletContext().getRequestDispatcher("/views/employee/employees.jsp")
                         .forward(request, response);
+                return;
             } catch (Exception ex) {
                 Logger.getLogger(EmployeeServlet.class.getName()).log(Level.SEVERE, null, ex);
             }

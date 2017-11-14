@@ -17,6 +17,7 @@
         <title>Add Employee</title>
     </head>
     <body>
+        <jsp:include page="../navbar.jsp"></jsp:include>
 
         <!-- <div class="main">
                 <button type="button" id="Back"  class="btn btn-primary">Back</button>               
@@ -26,7 +27,9 @@
 
 
         <div class="container">
-            <button  class="well" type="button" id="Back">Back</button>
+            <a href="${pageContext.request.contextPath}/EmployeeServlet">
+             <button  name = "back" class="well" type="button" id="Back">Back</button>
+            </a> 
             <div class="col-lg-12 well">
                 <div class="row">
                     <form action="${pageContext.request.contextPath}/EmployeeServlet" method="post">

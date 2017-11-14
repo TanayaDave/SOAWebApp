@@ -22,6 +22,21 @@
 <message name="getAllTrucksResponse">
 <part name="parameters" element="tns:getAllTrucksResponse"/>
 </message>
+<message name="updateTruck">
+<part name="parameters" element="tns:updateTruck"/>
+</message>
+<message name="updateTruckResponse">
+<part name="parameters" element="tns:updateTruckResponse"/>
+</message>
+<message name="deleteTruck">
+<part name="parameters" element="tns:deleteTruck"/>
+</message>
+<message name="deleteTruckResponse">
+<part name="parameters" element="tns:deleteTruckResponse"/>
+</message>
+<message name="Exception">
+<part name="fault" element="tns:Exception"/>
+</message>
 <portType name="TruckService">
 <operation name="getTruckDetailsById">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/getTruckDetailsByIdRequest" message="tns:getTruckDetailsById"/>
@@ -34,6 +49,15 @@
 <operation name="getAllTrucks">
 <input wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/getAllTrucksRequest" message="tns:getAllTrucks"/>
 <output wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/getAllTrucksResponse" message="tns:getAllTrucksResponse"/>
+</operation>
+<operation name="updateTruck">
+<input wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/updateTruckRequest" message="tns:updateTruck"/>
+<output wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/updateTruckResponse" message="tns:updateTruckResponse"/>
+</operation>
+<operation name="deleteTruck">
+<input wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/deleteTruckRequest" message="tns:deleteTruck"/>
+<output wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/deleteTruckResponse" message="tns:deleteTruckResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://services.group9.itmd566.iit.edu/TruckService/deleteTruck/Fault/Exception"/>
 </operation>
 </portType>
 <binding name="TruckServicePortBinding" type="tns:TruckService">
@@ -64,6 +88,27 @@
 <output>
 <soap:body use="literal"/>
 </output>
+</operation>
+<operation name="updateTruck">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteTruck">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
 </operation>
 </binding>
 <service name="TruckService">

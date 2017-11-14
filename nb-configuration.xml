@@ -18,5 +18,7 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/LoginService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_LoginService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_TruckService>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/TruckService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_TruckService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_location>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_location>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_maintenance>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_maintenance>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_EmployeeService>http://dhcp121.merusouth121.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_EmployeeService>
     </properties>
 </project-shared-configuration>

@@ -4,6 +4,10 @@
 
 <xs:element name="createMaintenanceResponse" type="tns:createMaintenanceResponse"/>
 
+<xs:element name="getAllMaintenance" type="tns:getAllMaintenance"/>
+
+<xs:element name="getAllMaintenanceResponse" type="tns:getAllMaintenanceResponse"/>
+
 <xs:element name="getMaintenanceById" type="tns:getMaintenanceById"/>
 
 <xs:element name="getMaintenanceByIdResponse" type="tns:getMaintenanceByIdResponse"/>
@@ -27,6 +31,16 @@
 <xs:complexType name="createMaintenanceResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllMaintenance">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllMaintenanceResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:maintenance" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
