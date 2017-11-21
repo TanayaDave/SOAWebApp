@@ -25,6 +25,7 @@
             <li><a href="MaintenanceServlet">Maintenance</a></li>
             <li><a href="EmployeeServlet" onclick='abc(event);'>Employees</a></li>
             <li><a href="#">View Comments</a></li>
+            <li><a href="/loginPage.jsp" onclick='abc(event);'>Logout</a></li>
         </ul>
     </div>
 </nav> 

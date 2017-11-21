@@ -24,7 +24,7 @@
             <a href="${pageContext.request.contextPath}/views/pricing/addPricing.jsp">
                 <button   style = float:right class="btn btn-primary ">Add Price</button>
             </a>
-             <table class="table">
+             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Location Code</th>

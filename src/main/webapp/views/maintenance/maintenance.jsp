@@ -23,7 +23,7 @@
             <a href="${pageContext.request.contextPath}/views/maintenance/addMaintenance.jsp">
                 <button   style = float:right class="btn btn-primary ">Add Maintenance</button>
             </a>
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Date</th>                       

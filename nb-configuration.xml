@@ -20,5 +20,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_location>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/location?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_location>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_maintenance>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/maintenance?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_maintenance>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_EmployeeService>http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/EmployeeService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_EmployeeService>
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>gfv3ee6</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
     </properties>
 </project-shared-configuration>

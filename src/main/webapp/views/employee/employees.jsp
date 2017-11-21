@@ -24,7 +24,7 @@
             <a href="${pageContext.request.contextPath}/views/employee/addEmployee.jsp">
                 <button   style = float:right class="btn btn-primary ">Add Employee</button>
             </a>
-             <table class="table">
+             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Firstname</th>
@@ -45,7 +45,7 @@
                              <td><c:out value="${emp.empFirstName}" /></td>
                             <td><c:out value="${emp.empLastName}" /></td>
                             <td><c:out value="${emp.role}" /></td>
-                            <td><c:out value="${emp.address}" /></td>
+                            <td><c:out value="${emp.address.city}" /></td>
                             <td><c:out value="${emp.ssn}" /></td>
                             <td><c:out value="${emp.dob}" /></td>
                             <td><c:out value="${emp.dateHired}" /></td>

@@ -25,7 +25,7 @@
                 <a href="${pageContext.request.contextPath}/views/truck/addNewTruck.jsp">
                 <button style = float:right class="btn btn-primary ">Add Truck</button>
             </a>
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>VIN</th>
