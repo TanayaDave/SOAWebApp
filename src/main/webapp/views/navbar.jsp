@@ -18,13 +18,10 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="welcome.jsp" onclick='abc(event);'>Home</a></li>
             <li><a href="TruckServlet" onclick='abc(event);'>Trucks</a></li>      
-            <li><a href="#">Orders</a></li>
-             <li><a href="#">Customers</a></li>
+            <li><a href="OrderServlet" onclick='abc(event);'>Orders</a></li>
             <li><a href="PricingServlet" onclick='abc(event);'>Pricing</a></li>
-            <li><a href="#">Generate Invoices</a></li>
             <li><a href="MaintenanceServlet">Maintenance</a></li>
             <li><a href="EmployeeServlet" onclick='abc(event);'>Employees</a></li>
-            <li><a href="#">View Comments</a></li>
             <li><a href="/loginPage.jsp" onclick='abc(event);'>Logout</a></li>
         </ul>
     </div>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://services.group9.itmd566.iit.edu/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.group9.itmd566.iit.edu/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="getPriceById" type="tns:getPriceById"/>
+
+<xs:element name="getPriceByIdResponse" type="tns:getPriceByIdResponse"/>
+
+<xs:element name="getPricing" type="tns:getPricing"/>
+
+<xs:element name="getPricingResponse" type="tns:getPricingResponse"/>
+
+<xs:complexType name="getPriceById">
+<xs:sequence>
+<xs:element name="priceid" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPriceByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPricing">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPricingResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pricing" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pricing">
+<xs:sequence>
+<xs:element name="custId" type="xs:int"/>
+<xs:element name="locCodeFrom" type="xs:int"/>
+<xs:element name="locCodeTo" type="xs:int"/>
+<xs:element name="locIdFrom" type="xs:string" minOccurs="0"/>
+<xs:element name="locIdTo" type="xs:string" minOccurs="0"/>
+<xs:element name="locNameFrom" type="xs:string" minOccurs="0"/>
+<xs:element name="locNameTo" type="xs:string" minOccurs="0"/>
+<xs:element name="priceId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

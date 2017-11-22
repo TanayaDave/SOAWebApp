@@ -26,142 +26,59 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
-    @Column(name = "CId")
-    private int custId;
-
-    @Column(name = "OrdDate")
+//    @Native
+//    @Column(name = "OrdDate")
     @Temporal(TemporalType.DATE)
     private Date orderDate;
 
-    @Column(name = "EmpId")
-    private Integer employeeId;
+    private String locFrom;
 
-    @ManyToOne
-    @JoinColumn(name = "customer")
-    private Customer customer;
+    private String locTo;
 
-    @Column(name = "untCost")
-    private Integer unitCost;
+    private String custName;
 
-    @Column(name = "qty")
-    private Integer qnty;
-
-    @Column(name = "lId")
-    private Integer locId;
-
-    @Column(name = "tId")
-    private Integer truckId;
-
-    @Column(name = "ttlAmt")
-    private Integer totalAmount;
-
+    private String vin;
     
-    /**
-     * Get the value of truckId
-     *
-     * @return the value of truckId
-     */
-    public Integer getTruckId() {
-        return truckId;
+    private Integer amt;
+
+    public String getLocFrom() {
+        return locFrom;
     }
 
-    /**
-     * Set the value of truckId
-     *
-     * @param truckId new value of truckId
-     */
-    public void setTruckId(Integer truckId) {
-        this.truckId = truckId;
+    public void setLocFrom(String locFrom) {
+        this.locFrom = locFrom;
     }
 
-    /**
-     * Get the value of totalAmount
-     *
-     * @return the value of totalAmount
-     */
-    public Integer getTotalAmount() {
-        return totalAmount;
+    public String getLocTo() {
+        return locTo;
     }
 
-    /**
-     * Set the value of totalAmount
-     *
-     * @param totalAmount new value of totalAmount
-     */
-    public void setTotalAmount(Integer totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setLocTo(String locTo) {
+        this.locTo = locTo;
     }
 
-    /**
-     * Get the value of locId
-     *
-     * @return the value of locId
-     */
-    public Integer getLocId() {
-        return locId;
+    public String getCustName() {
+        return custName;
     }
 
-    /**
-     * Set the value of locId
-     *
-     * @param locId new value of locId
-     */
-    public void setLocId(Integer locId) {
-        this.locId = locId;
+    public void setCustName(String custName) {
+        this.custName = custName;
     }
 
-    /**
-     * Get the value of employeeId
-     *
-     * @return the value of employeeId
-     */
-    public Integer getEmployeeId() {
-        return employeeId;
+    public String getVin() {
+        return vin;
     }
 
-    /**
-     * Set the value of employeeId
-     *
-     * @param employeeId new value of employeeId
-     */
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
+    public void setVin(String vin) {
+        this.vin = vin;
     }
 
-    /**
-     * Get the value of qnty
-     *
-     * @return the value of qnty
-     */
-    public Integer getQnty() {
-        return qnty;
+    public Integer getAmt() {
+        return amt;
     }
 
-    /**
-     * Set the value of qnty
-     *
-     * @param qnty new value of qnty
-     */
-    public void setQnty(Integer qnty) {
-        this.qnty = qnty;
-    }
-
-    /**
-     * Get the value of unitCost
-     *
-     * @return the value of unitCost
-     */
-    public Integer getUnitCost() {
-        return unitCost;
-    }
-
-    /**
-     * Set the value of unitCost
-     *
-     * @param unitCost new value of unitCost
-     */
-    public void setUnitCost(Integer unitCost) {
-        this.unitCost = unitCost;
+    public void setAmt(Integer amt) {
+        this.amt = amt;
     }
 
     /**
@@ -182,14 +99,6 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
     public int getOrderId() {
         return orderId;
     }
@@ -198,18 +107,9 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getCustId() {
-        return custId;
-    }
-
-    public void setCustId(int custId) {
-        this.custId = custId;
-    }
-    
     @Override
     public String toString() {
-        return "Order{" + "id=" + orderId + ", Customer Id=" + custId + ", Order Date=" + orderDate + ", Employee Id=" + employeeId + ", Unit Cose=" + unitCost + ", quantity=" + qnty + ",Location Id"+ locId +", Truck Id="+truckId+",Total Amt = "+totalAmount+'}';
+        return "Order{" + "orderId=" + orderId + ", orderDate=" + orderDate + ", locFrom=" + locFrom + ", locTo=" + locTo + ", custName=" + custName + ", vin=" + vin + ", amt=" + amt + '}';
     }
-
 
 }

@@ -33,4 +33,20 @@
     <system systemId="http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/TruckService?xsd=1" uri="wsdl/dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/TruckService.xsd_1.xsd"/>
     <system systemId="http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?wsdl" uri="wsdl/dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.wsdl"/>
     <system systemId="http://dhcp114.merunorth100.iit.edu:8080/TruckShippingSystemWebServices/CustomerService?xsd=1" uri="wsdl/dhcp114.merunorth100.iit.edu_8080/TruckShippingSystemWebServices/CustomerService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/EmployeeService?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/EmployeeService.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/EmployeeService?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/EmployeeService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/maintenance?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/maintenance.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/maintenance?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/maintenance.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/OrderService?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/OrderService.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/OrderService?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/OrderService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/price?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/price.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/price?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/price.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/LoginService?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/LoginService.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/LoginService?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/LoginService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/TruckService?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/TruckService.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/TruckService?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/TruckService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/CustomerService?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/CustomerService.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/CustomerService?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/CustomerService.xsd_1.xsd"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/location?wsdl" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/location.wsdl"/>
+    <system systemId="http://dhcp188.merusouth124.iit.edu:23674/TruckShippingSystemWebServices/location?xsd=1" uri="wsdl/dhcp188.merusouth124.iit.edu_23674/TruckShippingSystemWebServices/location.xsd_1.xsd"/>
 </catalog>

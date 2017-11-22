@@ -5,15 +5,11 @@
  */
 package com.sjesu.webtruckshippingsystem.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -32,14 +28,6 @@ public class Customer {
     private Address address;
     @Embedded
     private ContactDetails contactdetails;
-
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.PERSIST)
-    List<Order> orders = new ArrayList<>();
-
-    public void addOrders(Order order) {
-        this.orders.add(order);
-        order.setCustomer(this);
-    }
 
     /**
      * Get the value of custLastName
